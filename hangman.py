@@ -14,8 +14,9 @@ print(place_holder)
 attempts = 0
 correct_letters = []
 guess_count = 0
+game_over = False
 
-while attempts < 6:
+while not game_over:
     if guess_count == len(chosen_word):
         print("You win!!!!")
         break
@@ -23,6 +24,9 @@ while attempts < 6:
     guess = input("Guess a letter: ").lower()
     if not guess in chosen_word:
         attempts += 1
+        if attempts == 6:
+            print("You loose!!!!")
+            break
 
     display = ""
     for letter in chosen_word:
