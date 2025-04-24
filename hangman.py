@@ -16,13 +16,13 @@ correct_letters = []
 guess_count = 0
 
 while attempts < 6:
+    if guess_count == len(chosen_word):
+        print("You win!!!!")
+        break
+    
     guess = input("Guess a letter: ").lower()
     if not guess in chosen_word:
         attempts += 1
-    
-    if guess_count == len(chosen_word)-1:
-        print("You win!!!!")
-        break
 
     display = ""
     for letter in chosen_word:
@@ -32,7 +32,6 @@ while attempts < 6:
             guess_count += 1 
         elif letter in correct_letters:
             display += letter
-            guess_count += 1
         else:
             display += "_"
         
