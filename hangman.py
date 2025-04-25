@@ -1,5 +1,15 @@
 import random
 
+banner = '''
+ _                                             
+| |                                            
+| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
+| '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
+| | | | (_| | | | | (_| | | | | | | (_| | | | |
+|_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
+                    __/ |                      
+                   |___/  
+'''
 
 hangman = [r'''
   +---+
@@ -52,10 +62,12 @@ hangman = [r'''
       |
 =========''',]
 
+print(banner)
+
 word_list = ["aaardvark", "baboon", "camel"]
 #word_list = ["baboon"]
 chosen_word = random.choice(word_list)
-print(chosen_word)
+#print(chosen_word)
 
 place_holder = ""
 for letter_in_scope in chosen_word:
@@ -73,7 +85,7 @@ while not game_over:
         print("You win!!!!")
         break
         
-    guess = input("Guess a letter: ").lower()
+    guess = input("\nGuess a letter: ").lower()
     display = ""
     for letter in chosen_word:
         if letter == guess:
