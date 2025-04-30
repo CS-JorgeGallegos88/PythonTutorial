@@ -21,13 +21,25 @@ def decode(original_text, shift_amount):
             original_text += character
     print(f"Decoded word: {cipher_text}")
 
+def caesar(text, shift, mode):
+    result_text = ""
+    for character in text:
+        if character in alphabet:
+            index = alphabet.index(character)
+            if mode == "encode":
+                new_index = (index + shift) % len(alphabet)
+            elif mode == "decode":
+                new_index = (index - shift) % len(alphabet)
+            result_text += alphabet[new_index]
+        else:
+            result_text += character  # mantener espacios u otros caracteres
+    print(f"{mode}d word: {result_text}")
+
 user_choice = input("Type \'encode' to encrypt, type \'decode' to decrypt: ").lower()
 text = input("Type your message: ").lower()
 shift = int(input("Type the shift number: "))
 
-if user_choice == 'encode':
-    encode(text, shift)
-elif user_choice == 'decode':
-    decode(text, shift)
+if user_choice == 'encode' or user_choice == 'decode':
+    caesar(text, shift, user_choice)
 else:
     print("Invalid option")
