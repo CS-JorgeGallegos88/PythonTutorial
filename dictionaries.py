@@ -1,3 +1,5 @@
+import operator
+
 colors = {
     "apple":"red",
     "pear":"green",
@@ -75,3 +77,14 @@ final_dictionary = {
 starting_dictionary["c"] = 7
 final_dictionary = starting_dictionary
 print(final_dictionary)
+
+#Get the highest bid without using max function
+bidders = { "Chandler":100, "Phoebe":200, "Rachel":5000, "Joey":300, "Monica":8000, "Ross":400 }
+winner = ""
+highest_bid = 0
+for key in bidders:
+    amount_bidded = bidders[key]
+    if amount_bidded > highest_bid:
+        winner = key
+        highest_bid = amount_bidded
+print(f"The winner is {winner} with a bid of {highest_bid}")
