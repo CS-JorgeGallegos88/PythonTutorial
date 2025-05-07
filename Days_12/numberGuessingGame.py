@@ -25,29 +25,27 @@ def start_game(max_number_of_attempts):
 
         if (low_range) >= 30:
             max_number_of_attempts -= 1
-            print("Estas muy por debajo") # muy lejos hacia abajo
+            print("Too low!") # muy lejos hacia abajo
         elif (high_range) >= 30:
             max_number_of_attempts -= 1
-            print("Estas muy arriba") # muy lejos hacia arriba
+            print("Too high!") # muy lejos hacia arriba
         elif (low_range) >= 10:
             max_number_of_attempts -= 1
-            print("Sigues abajo") # solo un poco lejos hacia abajo
+            print("You are still under") # solo un poco lejos hacia abajo
         elif (high_range) >= 10:
             max_number_of_attempts -= 1
-            print("Sigues arriba") # solo un poco lejos hacia arriba
+            print("You are still up") # solo un poco lejos hacia arriba
         elif (low_range) >= 5:
             max_number_of_attempts -= 1
-            print("Sube mas") # muy cerca hacia abajo
+            print("Up a bit") # muy cerca hacia abajo
         elif (high_range) >= 5:
             max_number_of_attempts -= 1
-            print("Baja mas") # muy cerca hacia arriba
+            print("Low a bit") # muy cerca hacia arriba
+        elif max_number_of_attempts == 0:
+            print(f"You lose, the number was {computer_choice}") #Avisar que el jugador perdio
         else:
             max_number_of_attempts -= 1
-            print("Ya falta poco!")    
-
-        #Avisar que el jugador perdio
-        if max_number_of_attempts == 0:
-            print("Perdiste!!!")
+            print("You are close...")
 
 max_attempts = 0
 if difficulty == "easy":
