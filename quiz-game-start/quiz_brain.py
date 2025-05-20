@@ -27,4 +27,3 @@ class QuizBrain:
             print("You got it wrong")
 
         print(f"Correct answer was: {r_answer}")
-        self.show_score()

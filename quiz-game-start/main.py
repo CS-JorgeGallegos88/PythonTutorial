@@ -13,3 +13,5 @@ print(quiz_brain.is_questionary_complete())
 
 while not quiz_brain.is_questionary_complete():
     quiz_brain.next_question()
+
+quiz_brain.show_score()
