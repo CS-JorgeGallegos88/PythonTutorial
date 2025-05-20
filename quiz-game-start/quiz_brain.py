@@ -12,7 +12,7 @@ class QuizBrain:
         return self.question_number == len(self.question_list)
 
     def next_question(self):
-        '''Retrieves the question from list at specific index'''
+        """Retrieves the question from list at specific index"""
         question = self.question_list[self.question_number]
         self.question_number += 1
         right_answer = question.answer.lower()
