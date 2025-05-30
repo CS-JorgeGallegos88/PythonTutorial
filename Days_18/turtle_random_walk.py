@@ -16,6 +16,6 @@ def random_walk(num):
         timmy.forward(50)
         timmy.setheading(random.choice(angles))
 
-random_walk(500)
+random_walk(100)
 screen = Screen()
 screen.exitonclick()
